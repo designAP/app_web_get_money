@@ -12,12 +12,14 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-    
-    
-
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    
     <link rel="stylesheet" href="css/style-main.css"/>
+
+
     </head>
   <body>
     <section>
@@ -54,7 +56,7 @@
                     <div class="col-lg-2 ms-auto">
 
                         <a class="btn btn-secundary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#login">Inicia Sesión</a>
-                        <a class="btn btn-primary btn-sm">Registrate</a>
+                        <a class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#register">Registrate</a>
 
                     </div>
                   </nav>
@@ -355,8 +357,71 @@
             </div>
             </div>
         </div>
+
+        <div class="modal fade" id="register" tabindex="-1" aria-labelledby="register" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="post" action="submit-signup">
+                <div class="modal-body">
+                    
+                        <div class="col-lg">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Nombre</span>
+                                <input type="text" name="name" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1">
+                              </div>
+
+                              <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Apellido</span>
+                                <input type="text" name="lastname" class="form-control" placeholder="Apellido" aria-label="Username" aria-describedby="basic-addon1">
+                              </div>
+
+                              <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Email</span>
+                                <input type="email" name="Email" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
+                              </div>
+
+                              <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Telefono</span>
+                                <input type="number" name="phone" minlength="10" maxlength="10" class="form-control" placeholder="Telefono" aria-label="Username" aria-describedby="basic-addon1">
+                              </div>
+
+                              <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Estado</span>
+                                <select id="select_states" name="state" class="form-select">
+                                    <option selected>Elije tu Estado</option>
+                                </select>
+                              </div>
+
+                              <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Ciudad</span>
+                                <select name="city" id="select_city" class="form-select">
+                                    <option selected>Elije tu Ciudad</option>
+                                </select>
+                              </div>
+
+                              <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">Contraseña</span>
+                                <input type="password" name="pass" class="form-control" placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1">
+                              </div>
+                        </div>
+                    
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Iniciar</button>
+                </div>
+
+                </form>
+            </div>
+            </div>
+        </div>
     </div>
 
+    <script src="js/main.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>

@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    
+    
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+    <link rel="stylesheet" href="css/style-main.css"/>
+    </head>
+  <body>
+    <section>
+
+        <div class="row no-gutters">
+            
+            <div class="col-lg">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="d-flex justify-content-center h-100 ms-5">
+                        <img class= "align-self-center" src="assets/icon.png" height="50"/>
+                    </div>
+                    <a class="navbar-brand ms-3" style="color: var(--color-verde);" href="#">Get <span class="font-weigth-bold text_color_dark_2">Money</span></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav ms-auto">
+                        <li class="nav-item active">
+                          <a class="nav-link text_color_dark_1" href="#">Inicio <span class="sr-only"></span></a>
+                        </li>
+                          <li class="nav-item active">
+                            <a class="nav-link text_color_dark_1" href="#">Reservar </a>
+                          </li>
+                          <li class="nav-item active">
+                            <a class="nav-link text_color_dark_1" href="#">Promociones</a>
+                          </li>
+                          <li class="nav-item active">
+                            <a class="nav-link text_color_dark_1" href="#">Alertas</a>
+                          </li>
+                      </ul>
+                    </div>
+
+                    <div class="col-lg-2 ms-auto">
+                        <a class="btn btn-secundary btn-sm" type="button" href="logout">Desconectar</a>
+                       
+                        <a class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#login">Tu Cuenta</a>
+
+                    </div>
+                  </nav>
+            </div>
+        </div>
+
+    </section>
+
+    <section style="margin-top: 3rem;">
+
+        <div class="row no-gutters">
+
+          <div class="col-lm-2">
+
+          <div class="card card-custom card-shadowless bg-gray-100">
+            <!--begin::Header-->
+            <div class="card-header border-0 pt-7">
+              <h3 class="card-title align-items-start flex-column">
+                <span class="card-label font-weight-bold font-size-h4 text-dark-75">Pendientes</span>
+              </h3>
+           
+            </div>
+
+            <div class="card-body pt-0 pb-4">
+              <div class="tab-content mt-2" id="myTabTable5">
+                
+                <div class="tab-pane fade show active" id="kt_tab_table_5_3" role="tabpanel" aria-labelledby="kt_tab_table_5_3">
+                  <!--begin::Table-->
+                  <div class="table-responsive">
+                    <table class="table table-borderless table-vertical-center">
+                      <thead>
+                        <tr>
+                          <th class="p-0 w-50px"></th>
+                          <th class="p-0 min-w-100px">Compra</th>
+                          <th class="p-0 min-w-125px">Venta</th>
+                          <th class="p-0 min-w-150px"></th>
+                        </tr>
+                      </thead>
+                      <tbody id="content_table_pendientes">
+                       
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--end::Tablet-->
+                </div>
+                <!--end::Tap pane-->
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="card card-custom card-shadowless bg-gray-100">
+            <!--begin::Header-->
+            <div class="card-header border-0 pt-7">
+              <h3 class="card-title align-items-start flex-column">
+                <span class="card-label font-weight-bold font-size-h4 text-dark-75">Cancelados</span>
+              </h3>
+           
+            </div>
+
+            <div class="card-body pt-0 pb-4">
+              <div class="tab-content mt-2" id="myTabTable5">
+                
+                <div class="tab-pane fade show active" id="kt_tab_table_5_3" role="tabpanel" aria-labelledby="kt_tab_table_5_3">
+                  <!--begin::Table-->
+                  <div class="table-responsive">
+                    <table class="table table-borderless table-vertical-center">
+                      <thead>
+                        <tr>
+                          <th class="p-0 w-50px"></th>
+                          <th class="p-0 min-w-100px">Compra</th>
+                          <th class="p-0 min-w-125px">Venta</th>
+                          <th class="p-0 min-w-150px"></th>
+                        </tr>
+                      </thead>
+                      <tbody id="content_table_canceladas">
+                       
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--end::Tablet-->
+                </div>
+                <!--end::Tap pane-->
+              </div>
+            </div>
+
+          </div>
+  
+          <div class="card card-custom card-shadowless bg-gray-100">
+            <!--begin::Header-->
+            <div class="card-header border-0 pt-7">
+              <h3 class="card-title align-items-start flex-column">
+                <span class="card-label font-weight-bold font-size-h4 text-dark-75">Aprobados</span>
+              </h3>
+           
+            </div>
+
+            <div class="card-body pt-0 pb-4">
+              <div class="tab-content mt-2" id="myTabTable5">
+                
+                <div class="tab-pane fade show active" id="kt_tab_table_5_3" role="tabpanel" aria-labelledby="kt_tab_table_5_3">
+                  <!--begin::Table-->
+                  <div class="table-responsive">
+                    <table class="table table-borderless table-vertical-center">
+                      <thead>
+                        <tr>
+                          <th class="p-0 w-50px"></th>
+                          <th class="p-0 min-w-100px">Compra</th>
+                          <th class="p-0 min-w-125px">Venta</th>
+                          <th class="p-0 min-w-150px"></th>
+                        </tr>
+                      </thead>
+                      <tbody id="content_table_aprobadas">
+                       
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--end::Tablet-->
+                </div>
+                <!--end::Tap pane-->
+              </div>
+            </div>
+
+          </div>
+
+          <div class="card card-custom card-shadowless bg-gray-100">
+            <!--begin::Header-->
+            <div class="card-header border-0 pt-7">
+              <h3 class="card-title align-items-start flex-column">
+                <span class="card-label font-weight-bold font-size-h4 text-dark-75">Concluidos</span>
+              </h3>
+           
+            </div>
+
+            <div class="card-body pt-0 pb-4">
+              <div class="tab-content mt-2" id="myTabTable5">
+                
+                <div class="tab-pane fade show active" id="kt_tab_table_5_3" role="tabpanel" aria-labelledby="kt_tab_table_5_3">
+                  <!--begin::Table-->
+                  <div class="table-responsive">
+                    <table class="table table-borderless table-vertical-center">
+                      <thead>
+                        <tr>
+                          <th class="p-0 w-50px"></th>
+                          <th class="p-0 min-w-100px">Compra</th>
+                          <th class="p-0 min-w-125px">Venta</th>
+                          <th class="p-0 min-w-150px"></th>
+                        </tr>
+                      </thead>
+                      <tbody id="content_table_concluidas">
+                       
+                      </tbody>
+                    </table>
+                  </div>
+                  <!--end::Tablet-->
+                </div>
+                <!--end::Tap pane-->
+              </div>
+            </div>
+
+          </div>
+
+          </div>
+
+    </section>
+
+
+    <div>
+        <div class="modal fade" id="popup_suc" tabindex="-1" aria-labelledby="login" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+              
+                <div class="modal-body">
+                  
+                    
+                        <div class="col-lg">
+                           <img class="align-self-center" id="suc_image" width="124px"/>
+
+                           <h2 class="align-self-center" id="suc_name">nombre</h2>
+                           <p class="align-self-center" id="suc_direc">direccion</p>
+                           <p class="align-self-center" id="suc_phone">direccion</p>
+                           <a class="align-self-center" id="suc_calif">calificacion</a>
+
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">MXN</span>
+                                <input type="number" name="text" class="form-control" id="suc_pesos" placeholder="" aria-describedby="basic-addon1">
+                              </div>
+
+                              <div class="input-group mb-3">
+                                <span class="input-group-text" id="suc_rating">USD</span>
+                                <input type="number" name="number" class="form-control" id="suc_usd" placeholder="" aria-describedby="basic-addon1" disabled="true">
+                              </div>
+                        </div>
+                    
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>  
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ver Mapa</button>
+                <button type="button" class="btn btn-primary" id="suc_reservar">Reservar</button>
+                </div>
+
+            
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/reservations/reservados.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+:root{
+    --color-gray : #f5f5f5;
+    --color-black : #484848;
+    --color-gold : #c7b8A5;
+    --color-verde : #88BD27;
+}
+
+body{
+    width: 100%;
+    font-family: 'Anton', sans-serif;
+    font-weight: 200;
+    background-color: var(--color-gray);
+    color: var(--color-black);
+    letter-spacing: .05rem;
+}
+
+.text_color_dark_1{
+    color: var(--color-black);
+}
+
+.text_color_dark_2{
+    color: black;
+}
+
+.lead-xl {
+    font-size: 1.25rem;
+}
+
+.nav-link{
+    margin: 2rem;
+}
+
+.sideways{
+    writing-mode: vertical-lr;
+    display: block;
+    margin: 1.25rem 0;
+    transform: 180deg;
+}
+
+select{
+    margin-top: .25rem;
+}
+
+.btn_search{
+    width: 100%;
+    margin-top: 1rem;
+}
