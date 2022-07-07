@@ -70,11 +70,11 @@
               console.log(tr);
               table1.appendChild(tr);
             }else if(status === "APROBADO"){
-              //table2.appendChild(tr);
+              table2.appendChild(tr);
             }else if(status === "CANCELADO"){
               table3.appendChild(tr);
             }else if(status === "CONCLUIDO"){
-              //table4.appendChild(tr);
+              table4.appendChild(tr);
             }
 
             
