@@ -4,6 +4,7 @@ const app = express();
 const auth = require("./connections/Auth");
 const content = require("./connections/Content");
 const reservation = require("./connections/Reservations")
+const alertas = require("./connections/Alerts")
 
 const cookieParser = require("cookie-parser");
 const sessions = require('express-session');
@@ -107,7 +108,7 @@ app.get('/getSucursalesProximas', (req, res) => {
   const response = req.query;
   session=req.session;
 
-  content.GetStores("21.1462897"/*response.latitude*/, "-86.852309"/*response.longitude*/, 10, session.token).then(function (response) {
+  content.GetStores(response.latitude, response.longitude, 10, session.token).then(function (response) {
     // manejar respuesta exitosa
     const respon = response.data;
 
@@ -212,7 +213,147 @@ app.get("/getReservation", (req, res) => {
 
   console.log("--------------------------------------");
 
-  reservation.GetReservations(session.tokenv ).then(function (response) {
+  reservation.GetReservations(session.token).then(function (response) {
+    // manejar respuesta exitosa
+    const respon = response.data;
+
+    const data =  JSON.parse(JSON.stringify(respon)).data;
+    console.log(data);
+    res.json(data);
+    
+    }).catch(function (error) {
+      if (error.response){
+
+        console.log(error.response);
+        
+        }else if(error.request){
+        
+          console.log(error.request);
+        
+        }else if(error.message){
+        
+          console.log(error.message);
+        
+        }
+    });
+
+});
+
+app.get("/getCurrencies", (req, res) => {
+
+  const response = req.query;
+  session=req.session;
+  console.log("--------------------------------------");
+  console.log(session.token);
+
+  console.log("hola");
+
+  console.log("--------------------------------------");
+
+  content.GetCurrencies(session.token).then(function (response) {
+    // manejar respuesta exitosa
+    const respon = response.data;
+
+    const data =  JSON.parse(JSON.stringify(respon)).data;
+    console.log(data);
+    res.json(data);
+    
+    }).catch(function (error) {
+      if (error.response){
+
+        console.log(error.response);
+        
+        }else if(error.request){
+        
+          console.log(error.request);
+        
+        }else if(error.message){
+        
+          console.log(error.message);
+        
+        }
+    });
+
+});
+
+app.get("/getCurrency", (req, res) => {
+
+  const response = req.query;
+  session=req.session;
+  console.log("--------------------------------------");
+  console.log(session.token);
+
+  console.log("hola");
+
+  console.log("--------------------------------------");
+
+  content.GetCurrency(response.id, session.token).then(function (response) {
+    // manejar respuesta exitosa
+    const respon = response.data;
+
+    const data =  JSON.parse(JSON.stringify(respon)).data;
+    console.log(data);
+    res.json(data);
+    
+    }).catch(function (error) {
+      if (error.response){
+
+        console.log(error.response);
+        
+        }else if(error.request){
+        
+          console.log(error.request);
+        
+        }else if(error.message){
+        
+          console.log(error.message);
+        
+        }
+    });
+
+});
+
+
+//APIs ALERTs
+
+app.get("/getAlerts", (req, res) => {
+
+  const response = req.query;
+  session=req.session;
+  console.log("--------------------------------------");
+  console.log(session.token);
+
+  console.log("--------------------------------------");
+
+  alertas.getAlerts(session.token + "").then(function (response) {
+    // manejar respuesta exitosa
+    const respon = response.data;
+
+    const data =  JSON.parse(JSON.stringify(respon)).data;
+    console.log(data);
+    res.json(data);
+    
+    }).catch(function (error) {
+
+    });
+
+    console.log("-------------------------------------- Alert");
+
+});
+
+
+app.get("/deleteAlert", (req, res) => {
+
+  const response = req.query;
+  session=req.session;
+  console.log("--------------------------------------");
+  console.log(session.token);
+
+  console.log("hola");
+
+  console.log("--------------------------------------");
+
+  alertas.deleteAlert(response.id, session.token).then(function (response) {
     // manejar respuesta exitosa
     const respon = response.data;
 
@@ -268,6 +409,19 @@ app.get ('/reservaciones' ,function (req , res) {
   console.log(req.session)
   if(session.userid){
     res.sendFile(__dirname + '/public/reservations/reservaciones.html' )
+  }else{
+    res.sendFile(__dirname + '/public/home/home.html' )
+  }
+// __ dirname: will resolve to your project folder.
+} ) ;
+
+app.get ('/alertas' ,function (req , res) {
+
+  console.log("--------------")
+  session=req.session;
+  console.log(req.session)
+  if(session.userid){
+    res.sendFile(__dirname + '/public/alertas/alertas.html' )
   }else{
     res.sendFile(__dirname + '/public/home/home.html' )
   }

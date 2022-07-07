@@ -40,16 +40,16 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav ms-auto">
                         <li class="nav-item active">
-                          <a class="nav-link text_color_dark_1" href="#">Inicio <span class="sr-only"></span></a>
+                          <a class="nav-link text_color_dark_1" href="/">Inicio <span class="sr-only"></span></a>
                         </li>
                           <li class="nav-item active">
-                            <a class="nav-link text_color_dark_1" href="#">Reservar </a>
+                            <a class="nav-link text_color_dark_1" href="/reservaciones">Reservar </a>
                           </li>
                           <li class="nav-item active">
                             <a class="nav-link text_color_dark_1" href="#">Promociones</a>
                           </li>
                           <li class="nav-item active">
-                            <a class="nav-link text_color_dark_1" href="#">Alertas</a>
+                            <a class="nav-link text_color_dark_1" href="/alertas">Alertas</a>
                           </li>
                       </ul>
                     </div>
@@ -76,7 +76,7 @@
             <!--begin::Header-->
             <div class="card-header border-0 pt-7">
               <h3 class="card-title align-items-start flex-column">
-                <span class="card-label font-weight-bold font-size-h4 text-dark-75">Pendientes</span>
+                <span class="card-label font-weight-bold font-size-h4 text-dark-75">Alertas</span>
               </h3>
            
             </div>
@@ -90,125 +90,13 @@
                     <table class="table table-borderless table-vertical-center">
                       <thead>
                         <tr>
-                          <th class="p-0 w-50px"></th>
-                          <th class="p-0 min-w-100px">Compra</th>
-                          <th class="p-0 min-w-125px">Venta</th>
-                          <th class="p-0 min-w-150px"></th>
+                          <th class="p-0 w-50px">Moneda</th>
+                          <th class="p-0 min-w-100px">Tipo</th>
+                          <th class="p-0 min-w-125px">Monto</th>
+                          <th class="p-0 min-w-125px"></th>
                         </tr>
                       </thead>
-                      <tbody id="content_table_pendientes">
-                       
-                      </tbody>
-                    </table>
-                  </div>
-                  <!--end::Tablet-->
-                </div>
-                <!--end::Tap pane-->
-              </div>
-            </div>
-
-          </div>
-
-
-          <div class="card card-custom card-shadowless bg-gray-100">
-            <!--begin::Header-->
-            <div class="card-header border-0 pt-7">
-              <h3 class="card-title align-items-start flex-column">
-                <span class="card-label font-weight-bold font-size-h4 text-dark-75">Cancelados</span>
-              </h3>
-           
-            </div>
-
-            <div class="card-body pt-0 pb-4">
-              <div class="tab-content mt-2" id="myTabTable5">
-                
-                <div class="tab-pane fade show active" id="kt_tab_table_5_3" role="tabpanel" aria-labelledby="kt_tab_table_5_3">
-                  <!--begin::Table-->
-                  <div class="table-responsive">
-                    <table class="table table-borderless table-vertical-center">
-                      <thead>
-                        <tr>
-                          <th class="p-0 w-50px"></th>
-                          <th class="p-0 min-w-100px">Compra</th>
-                          <th class="p-0 min-w-125px">Venta</th>
-                          <th class="p-0 min-w-150px"></th>
-                        </tr>
-                      </thead>
-                      <tbody id="content_table_canceladas">
-                       
-                      </tbody>
-                    </table>
-                  </div>
-                  <!--end::Tablet-->
-                </div>
-                <!--end::Tap pane-->
-              </div>
-            </div>
-
-          </div>
-  
-          <div class="card card-custom card-shadowless bg-gray-100">
-            <!--begin::Header-->
-            <div class="card-header border-0 pt-7">
-              <h3 class="card-title align-items-start flex-column">
-                <span class="card-label font-weight-bold font-size-h4 text-dark-75">Aprobados</span>
-              </h3>
-           
-            </div>
-
-            <div class="card-body pt-0 pb-4">
-              <div class="tab-content mt-2" id="myTabTable5">
-                
-                <div class="tab-pane fade show active" id="kt_tab_table_5_3" role="tabpanel" aria-labelledby="kt_tab_table_5_3">
-                  <!--begin::Table-->
-                  <div class="table-responsive">
-                    <table class="table table-borderless table-vertical-center">
-                      <thead>
-                        <tr>
-                          <th class="p-0 w-50px"></th>
-                          <th class="p-0 min-w-100px">Compra</th>
-                          <th class="p-0 min-w-125px">Venta</th>
-                          <th class="p-0 min-w-150px"></th>
-                        </tr>
-                      </thead>
-                      <tbody id="content_table_aprobadas">
-                       
-                      </tbody>
-                    </table>
-                  </div>
-                  <!--end::Tablet-->
-                </div>
-                <!--end::Tap pane-->
-              </div>
-            </div>
-
-          </div>
-
-          <div class="card card-custom card-shadowless bg-gray-100">
-            <!--begin::Header-->
-            <div class="card-header border-0 pt-7">
-              <h3 class="card-title align-items-start flex-column">
-                <span class="card-label font-weight-bold font-size-h4 text-dark-75">Concluidos</span>
-              </h3>
-           
-            </div>
-
-            <div class="card-body pt-0 pb-4">
-              <div class="tab-content mt-2" id="myTabTable5">
-                
-                <div class="tab-pane fade show active" id="kt_tab_table_5_3" role="tabpanel" aria-labelledby="kt_tab_table_5_3">
-                  <!--begin::Table-->
-                  <div class="table-responsive">
-                    <table class="table table-borderless table-vertical-center">
-                      <thead>
-                        <tr>
-                          <th class="p-0 w-50px"></th>
-                          <th class="p-0 min-w-100px">Compra</th>
-                          <th class="p-0 min-w-125px">Venta</th>
-                          <th class="p-0 min-w-150px"></th>
-                        </tr>
-                      </thead>
-                      <tbody id="content_table_concluidas">
+                      <tbody id="content_table_alerts">
                        
                       </tbody>
                     </table>
@@ -270,7 +158,7 @@
         </div>
     </div>
 
-    <script src="js/reservations/reservados.js"></script>
+    <script src="js/alertas/alertas.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>

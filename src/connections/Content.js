@@ -56,13 +56,13 @@ function GetCity(state_id, id_city){
     });
 }
 
-function GetCurrencies(){
+function GetCurrencies(token){
     return content.get('https://api-dev.techbubblegum.com/v1/content/currencies', {
      
     },
     {
     headers: {
-        'Authorization':'Bearer Cookie-Token',
+        'Authorization':'Bearer '+token,
         'Content-Type': 'application/json',
         'Content-Accept': '*/*',
         'Accept-Encoding': 'gzip, deflate, br'
@@ -70,13 +70,13 @@ function GetCurrencies(){
     });
 }
 
-function GetCurrency(id_){
+function GetCurrency(id_, token){
     return content.get('https://api-dev.techbubblegum.com/v1/content/currencies/'+id_, {
      
     },
     {
     headers: {
-        'Authorization':'Bearer Cookie-Token',
+        'Authorization':'Bearer '+token,
         'Content-Type': 'application/json',
         'Content-Accept': '*/*',
         'Accept-Encoding': 'gzip, deflate, br'
@@ -131,3 +131,5 @@ function GetStores(latitude_, longitude_, kms_, token){
 
 module.exports.GetStores = GetStores;
 module.exports.GetStore = GetStore;
+module.exports.GetCurrency = GetCurrency;
+module.exports.GetCurrencies = GetCurrencies;
